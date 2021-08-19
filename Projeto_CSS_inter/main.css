@@ -1,0 +1,143 @@
+* {
+
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body {
+    background:lightgoldenrodyellow;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}
+
+/* LAYOUT */
+
+#cabecalho {
+    background-color:gold;
+    padding: 22px;
+    text-align: center;
+    
+    
+}
+
+#logo, #menu {
+    padding: 12px;
+    
+}
+
+#corpo {
+    padding: 24px;
+    width: 920px;
+    margin: 0px auto;
+    /* padding: 1020px 32px; */
+
+}
+
+#post {
+    
+    width: 660px;
+    background: white;
+    float: left;
+}
+
+#menu_lateral {
+    width: 240px;
+    /* background: white; */
+    float: right;
+}
+#rodape {
+    background: lightblue;
+    clear: both;
+    text-align: center;
+    font-weight: 550;
+    font-size: 1.125em;
+    padding: 15px;
+
+} 
+
+.postagem{
+    padding: 20px;
+    margin-bottom: 25px;
+    background: white;
+}
+
+.cont_lateral {
+
+    background: white;
+    background-attachment: fixed;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.post_lateral{
+    padding: 5px;
+    font-size: 0.8em;
+    /* border-bottom: chocolate 1px solid ; */
+}
+
+
+
+/* Formatacao geral */
+
+h1  {
+    color: #4e4e4e;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #4e4e4e;
+    font-size: 1.6em;
+}
+h3 {
+    color:#4e4e4e ;
+    background-color:#CCC;
+    padding: 5px;
+    margin: 1px;
+}
+
+.data {
+
+    font-size: 0.9em;
+    border-bottom: 1px solid #f4f4f4;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    display: block;
+    
+}
+
+.branco{
+    color: white;
+}
+/* LINKS */
+
+
+#cabecalho a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+#cabecalho a:visited, #cabecalho a:link{
+    color:#4e4e4e;
+    padding: 8px 12px;
+}
+
+#cabecalho a:hover {
+
+    background-color:whitesmoke;
+    color: gold;
+}
+
+a {
+    text-decoration: none;
+  /* font-family: 'Courier New', Courier, monospace; */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited, a:link {
+    color: gold;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="main.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onresize="atualiza_pagina()">
+
+        <div class="painel">
+            <div class="vida">
+                <img id="v1" src="imagens/coracao_cheio.png" alt="">
+                <img id="v2" src="imagens/coracao_cheio.png" alt="">
+                <img id="v3" src="imagens/coracao_cheio.png" alt="">
+                <div class="tempo_restante">
+                    Tempo restante: <span id="cronometro"></span>
+                </div>
+            </div>
+        </div>
+        <a href="index.html"></a>
+        <script>  
+            document.getElementById('cronometro').innerHTML = tempo
+            var criaMosquito = setInterval(function(){ pos_Mosquito()}, tempo_mosca)
+        </script>
+    </body>
+</html>
