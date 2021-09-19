@@ -32,14 +32,26 @@
                     Login
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="validaLogin.php" method="post">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="E-mail">
+                            <input type="email" name="email" class="form-control" placeholder="E-mail">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Senha">
+                            <input type="password" name="senha" class="form-control" placeholder="Senha">
                         </div>
-                        <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
+                        <?php
+                            if (isset($_GET['login']) && $_GET['login']=='erro'){?>
+                                <div class="text-danger">
+                                    Usuário ou senha inválido(s)
+                                </div>
+                            <?php } ?>
+                        <?php
+                        if (isset($_GET['login']) && $_GET['login']=='erro2'){?>
+                            <div class="text-danger">
+                                Faça login antes de acessar as páginas protegida
+                            </div>
+                        <?php } ?>
+                        <button class="btn btn-lg btn-info btn-block" type="submit" >Entrar</button>
                     </form>
                 </div>
             </div>

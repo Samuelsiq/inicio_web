@@ -1,3 +1,15 @@
+<?php
+require_once "validarAcesso.php";
+    $chamados = [];
+    $arquivo = fopen('appDesk.txt','r');
+    while(!feof($arquivo)){
+        $registro = fgets($arquivo);
+        $chamados[] = $registro;
+
+    }
+    fclose($arquivo);
+    print_r($_SESSION);
+?>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -21,6 +33,11 @@
         <img src="image/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
     </a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="logoff.php">Sair</a>
+        </li>
+    </ul>
 </nav>
 
 <div class="container">
@@ -33,28 +50,29 @@
                 </div>
 
                 <div class="card-body">
-
+                    <?php foreach ($chamados as $chamado){?>
+                     <?php  $chamadoDados = explode('#', $chamado);
+                            if($_SESSION['adm'] == 0){
+                                if($_SESSION['id']!= $chamadoDados[0]){
+                                    continue;
+                                }
+                            }
+                            if(count($chamadoDados)<3){
+                                continue;
+                            }
+                     ?>
                     <div class="card mb-3 bg-light">
                         <div class="card-body">
-                            <h5 class="card-title">Título do chamado...</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                            <p class="card-text">Descrição do chamado...</p>
+                            <h5 class="card-title"><?=$chamadoDados[1]; ?></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><?= $chamadoDados[2]; ?></h6>
+                            <p class="card-text"><?= $chamadoDados[3]; ?></p>
 
                         </div>
                     </div>
-
-                    <div class="card mb-3 bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Título do chamado...</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                            <p class="card-text">Descrição do chamado...</p>
-
-                        </div>
-                    </div>
-
+                    <?php } ?>
                     <div class="row mt-5">
                         <div class="col-6">
-                            <button class="btn btn-lg btn-warning btn-block" type="submit">Voltar</button>
+                            <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,3 @@
+0#Teste1#Hardware#lorem ipsum
+0#Teste1#Software#.zx,mvx,vmz
+0#Alou2#Rede#hahaha
